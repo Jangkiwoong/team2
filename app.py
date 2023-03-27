@@ -51,7 +51,10 @@ def mars_post():
 @app.route("/gyeonggi", methods=["GET"])
 def gyeonggi_get():
     all_gyeonggi = list(db.gyeonggi.find({},{'_id':False}))
-    return jsonify({'msg':'GET 연결 완료!'})
+    print('###')
+    print(all_gyeonggi)
+    print('###')
+    return jsonify({'result': all_gyeonggi})
 
 
 
