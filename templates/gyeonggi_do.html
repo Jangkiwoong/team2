@@ -22,6 +22,42 @@
 
         }
     </style>
+    <script>
+         $(document).ready(function () {
+            listing();
+        });
+
+        function listing() {
+            fetch('/gyeonggi').then((res) => res.json()).then((data) => {
+                let rows = data['result']
+                
+                rows.forEach((a) => {
+                    let name = a['name']
+                    let trable_info = a['trable_info']
+                    let star = a['star']
+
+                    console.log(namme)
+
+                    let star_repeat = '⭐'.repeat(star)
+
+                    temp_html = `<div class="col">
+                                    <div class="card h-100">
+                                        <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+                                            class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${name}</h5>
+                                            <p class="card-text">${trable_info}</p>
+                                            <p>${star_repeat}</p>
+                                        </div>
+                                    </div>
+                                </div>`
+                    $('#cards-box').append(temp_html)
+
+                });
+                alert(data['msg'])
+            })
+        }
+    </script>
 
 
 
@@ -36,7 +72,7 @@
         검색 : <input type="text" />
         <button>검색</button>
     </div>
-    <div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="row row-cols-1 row-cols-md-5 g-4" id="cards-box">
         <div class="col">
             <div class="card h-100">
                 <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
@@ -45,6 +81,7 @@
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
                         additional content. This content is a little bit longer.</p>
+                        <p>⭐⭐⭐</p>
                 </div>
             </div>
         </div>

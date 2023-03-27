@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 from pymongo import MongoClient
-client = MongoClient('')
+client = MongoClient('mongodb+srv://sparta:1234@cluster0.zvpdvge.mongodb.net/?retryWrites=true&w=majority')
 db = client.toy_project
 
 import requests
@@ -40,14 +40,17 @@ def Chungcheong_do():
 
 
 
-@app.route("/mars", methods=["POST"])
+@app.route("/", methods=["POST"])
 def mars_post():
     sample_receive = request.form['sample_give']
     print(sample_receive)
     return jsonify({'msg':'POST 연결 완료!'})
 
-@app.route("/mars", methods=["GET"])
-def mars_get():
+
+
+@app.route("/gyeonggi", methods=["GET"])
+def gyeonggi_get():
+    all_gyeonggi = list(db.gyeonggi.find({},{'_id':False}))
     return jsonify({'msg':'GET 연결 완료!'})
 
 
