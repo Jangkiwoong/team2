@@ -15,10 +15,8 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
-  <script src="../assets/js/color-modes.js"></script>
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="carousel.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='/assets/dist/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='/assets/dist/css/carousel.css') }}">
 
   <style>
     .bd-placeholder-img {
@@ -95,7 +93,7 @@
     }
   </style>
   <!-- Custom styles for this template -->
-  <link href="../assets/dist/css/sign-in.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='/assets/dist/css/sign-in.css') }}">
   <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 </head>
 <body class="text-center">
