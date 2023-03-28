@@ -13,12 +13,16 @@ data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt
 
 soup = BeautifulSoup(data.text, 'html.parser')
 
+# path
+import os
+simp_path = '/'
+abs_path = os.path.abspath(simp_path)
 
 
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('login.html')
 
 @app.route('/seoul')
 def seoul():
@@ -47,9 +51,6 @@ def list_search():
 def gyeonggi_get():
     all_gyeonggi = list(db.gyeonggi.find({},{'_id':False}))
     return jsonify({'result': all_gyeonggi})
-
-
-
 
 
 
