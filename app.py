@@ -69,13 +69,24 @@ def gyeonggi_get():
 #기웅
 #덕인
 
+@app.route("/travelComment", methods=["POST"])
+def travelComment_post():
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
+    star_receive = request.form['star_give']
+    doc = {
+        'name':name_receive,
+        'comment':comment_receive,
+        'star':star_receive
+    }
+    db.test.insert_one(doc)
+    
+    return jsonify({'msg': '저장 완료!'})
 
-
-
-
-
-
-
+@app.route("/travelComment", methods=["GET"])
+def travelComment_get():
+    all_comments = list(db.test.find({},{'_id':False}))
+    return jsonify({'result': all_comments})
 
 
 
@@ -215,4 +226,4 @@ def gyeonggi_get():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    app.run('0.0.0.0', port=5001, debug=True)
