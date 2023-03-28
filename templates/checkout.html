@@ -2,14 +2,17 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
+  <script src="../assets/js/color-modes.js"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.111.3">
   <title>회원가입</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='/assets/dist/css/checkout.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='/assets/dist/css/bootstrap.min.css') }}">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -86,6 +89,9 @@
     }
   </style>
 
+
+  <!-- Custom styles for this template -->
+  <link href="checkout.css" rel="stylesheet">
   <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 </head>
 
@@ -162,9 +168,11 @@
       </ul>
     </footer>
   </div>
-  <script type="text/javascript" src="{{ url_for('static', filename='/assets/dist/js/checkout.js') }}" ></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='/assets/dist/js/bootstrap.bundle.min.js') }}" ></script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='/assets/dist/css/bootstrap.min.css') }}"> </script>
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="checkout.js"></script>
 </body>
 
 </html>
