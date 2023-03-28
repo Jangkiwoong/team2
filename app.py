@@ -36,25 +36,20 @@ def Gangwon_do():
 def Chungcheong_do():
     return render_template('Chungcheong_do.html')
 
+@app.route('/list')
+def list_search():
+    return render_template('list.html')
 
 
 
-
-@app.route("/", methods=["POST"])
-def mars_post():
-    sample_receive = request.form['sample_give']
-    print(sample_receive)
-    return jsonify({'msg':'POST 연결 완료!'})
-
-
-
+# 데이터 내려오기
 @app.route("/gyeonggi", methods=["GET"])
 def gyeonggi_get():
     all_gyeonggi = list(db.gyeonggi.find({},{'_id':False}))
-    print('###')
-    print(all_gyeonggi)
-    print('###')
     return jsonify({'result': all_gyeonggi})
+
+
+
 
 
 
