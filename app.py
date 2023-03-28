@@ -2,6 +2,14 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 from pymongo import MongoClient
+import certifi
+
+ca = certifi.where()
+
+client = MongoClient('mongodb+srv://sparta:test@cluster0.biqxprm.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
+db = client.dbsparta
+
+from pymongo import MongoClient
 client = MongoClient('mongodb+srv://sparta:1234@cluster0.zvpdvge.mongodb.net/?retryWrites=true&w=majority')
 db = client.toy_project
 
@@ -61,4 +69,4 @@ def gyeonggi_get():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    app.run('0.0.0.0', port=5001, debug=True)
