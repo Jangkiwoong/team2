@@ -22,7 +22,7 @@ abs_path = os.path.abspath(simp_path)
 
 @app.route('/')
 def home():
-    return render_template('login.html')
+    return render_template('index.html')
 
 @app.route('/seoul')
 def seoul():
