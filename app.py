@@ -103,13 +103,6 @@ def test_post(temp):
    return render_template('list_detail.html',result = asd)
 
 
-
-
-
-
-
-
-
 #기웅
 #덕인
 
@@ -205,7 +198,7 @@ def api_login():
         # JWT - payload와 시크릿키 필요.
         payload = {
             'id': id_receive,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=10)
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=100)
         }
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
