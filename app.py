@@ -22,13 +22,13 @@ abs_path = os.path.abspath(simp_path)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('login.html')
 
 
 
-@app.route('/gyeonggi_do')
+@app.route('/list')
 def gyeonggi_do():
-    return render_template('gyeonggi_do.html')
+    return render_template('list.html')
 
 
 
@@ -36,9 +36,9 @@ def gyeonggi_do():
 def Chungcheong_do():
     return render_template('list_detail.html')
 
-@app.route('/list')
+@app.route('/main')
 def list_search():
-    return render_template('list.html')
+    return render_template('index.html')
 
 
 
