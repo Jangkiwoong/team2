@@ -2,88 +2,153 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
-    <title></title>
+  <title></title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
-    <style>
-        
-    </style>
-    <script>
-        
-    </script>
+  <style>
+    /* .mytitle {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('data:image/jpeg;base64,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');
+      background-position: center;
+      background-size: cover;
+
+
+      height: 80px;
+      text-align: center;
+      color: white;
+      padding: 15px 20px 20px 20px;
+
+
+    } */
+
+    .navbar {
+      background-color: red !important;
+      width: 100%;
+      height:70px;
+                  
+    }
+
+    .mychoices {
+      margin: 40px auto 0px auto;
+      width: 95%;
+    }
+
+    .carousel slide {
+      height: 100%;
+      width: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    .carousel-inner>.carousel-item>img {
+      width: 640px;
+      height: 500px;
+
+    }
+  </style>
+  <script>
+
+  </script>
 </head>
 
 <body>
-    <div>
-        <h1>오늘의 추천 여행지</h1>
+  <!-- <div class="mytitle">
+    <h1>지금 제일 핫한 여행지!</h1>
+  </div> -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://velog.velcdn.com/images/kgy8987/post/2ef5d357-8488-41d5-8ec9-0bccb3d6d55e/image.png" alt=""
+          width="50" height="40" class="d-inline-block align-text-top">여기어때?</a>
     </div>
-    <div class="..">
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="..">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>서울</h5>
-                        <button onclick = "location.href = '/seoul' ">버튼입니다</button> 
-                    </div>
-                </div>
-            </div>
+  </nav>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+
+        <img
+          src="https://media.istockphoto.com/id/1402708189/ko/%EB%B2%A1%ED%84%B0/%EB%85%B8%EB%9E%80%EC%83%89-%EC%97%AC%ED%96%89-%EA%B0%80%EB%B0%A9%EC%9D%B4%EC%9E%88%EB%8A%94-%EC%97%AC%ED%96%89-%EB%B0%B0%EB%84%88.jpg?b=1&s=170667a&w=0&k=20&c=PYm9FZ2DLXJ1YHOHkkJ35ReFoqYgvBVi7jxy2gFEiHA="
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://velog.velcdn.com/images/kgy8987/post/7a94b00a-d955-4260-8fb5-8fb27b600978/image.png"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://velog.velcdn.com/images/kgy8987/post/468a4710-9e07-447e-b9bb-1bc4b4201000/image.jpg"
+          class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="mychoices">
+    <div class="row row-cols-1 row-cols-md-5 g-4" id="choices-box">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+            class="card-img-top">
+          <div class="card-body">
+            <h5 class="choice-place">강원도</h5>
+            <p class="choice-list">리스트가 들어갑니다</p>
+            <button type="button" class="btn btn-outline-dark" onClick="location.href='Gangwon_do.html'">추천받기</button>
+          </div>
         </div>
-    </div>
-    <div class="..">
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="..">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>경기도</h5>
-                        <button onclick = "location.href = '/gyeonggi_do' ">버튼입니다</button> 
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+            class="card-img-top">
+          <div class="card-body">
+            <h5 class="choice-place">경기도</h5>
+            <p class="choice-list">리스트가 들어갑니다</p>
+            <button type="button" class="btn btn-outline-dark" onClick="location.href='gyeonggi_do.html'">추천받기</button>
+          </div>
         </div>
-    </div>
-    <div class="..">
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="..">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>강원도</h5>
-                        <button onclick = "location.href = 'Gangwon_do' ">버튼입니다</button> 
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+            class="card-img-top">
+          <div class="card-body">
+            <h5 class="choice-place">충청도</h5>
+            <p class="choice-list">리스트가 들어갑니다</p>
+            <button type="button" class="btn btn-outline-dark" onClick="location.href='Chungcheong_do.html'">추천받기</button>
+          </div>
         </div>
+      </div>
+      
+      
     </div>
-    <div class="..">
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="..">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>충청도</h5>
-                        <button onclick = "location.href = 'Chungcheong_do' ">버튼입니다</button> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </body>
 
 </html>
