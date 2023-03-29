@@ -24,25 +24,23 @@ abs_path = os.path.abspath(simp_path)
 def home():
     return render_template('index.html')
 
-@app.route('/seoul')
-def seoul():
-    return render_template('seoul.html')
+
 
 @app.route('/gyeonggi_do')
 def gyeonggi_do():
     return render_template('gyeonggi_do.html')
 
-@app.route('/Gangwon_do')
-def Gangwon_do():
-    return render_template('Gangwon_do.html')
 
-@app.route('/Chungcheong_do')
+
+@app.route('/list_detail')
 def Chungcheong_do():
-    return render_template('Chungcheong_do.html')
+    return render_template('list_detail.html')
 
 @app.route('/list')
 def list_search():
     return render_template('list.html')
+
+
 
 
 #기웅
@@ -56,14 +54,26 @@ def gyeonggi_get():
 @app.route('/gyeonggi', methods=["POST"])
 def search_get():
     search_receive = request.form['title_give']
-    print('###')
-    print("검색", search_receive)
-    print('###')
+    
     search_list = list(db.gyeonggi.find({'$or': [{'title': {'$regex': search_receive}},]},{'_id': False}))
-    print('###')
-    print("검색 결과", search_list)
-    print('###')
+    
     return jsonify({'searches': search_list})
+
+
+#상세페이지로 데이터 주기
+@app.route('/list_det/<temp>')
+def test_post(temp):
+   print('###')
+   print(temp)
+   print('###')
+   asd = db.gyeonggi.find_one({'title':temp},{'_id': False})
+   return render_template('list_detail.html',result = asd)
+
+
+
+
+
+
 
 
 
