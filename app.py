@@ -6,6 +6,7 @@ client = MongoClient('mongodb+srv://sparta:1234@cluster0.zvpdvge.mongodb.net/?re
 db = client.toy_project
 
 
+
 # JWT 토큰을 만들 때 필요한 비밀문자열
 # 이 문자열은 서버만 알고있기 때문에, 내 서버에서만 토큰을 인코딩(=만들기)/디코딩(=풀기) 가능.
 SECRET_KEY = 'SPARTA'
