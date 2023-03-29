@@ -13,6 +13,10 @@ data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt
 
 soup = BeautifulSoup(data.text, 'html.parser')
 
+# path
+import os
+simp_path = '/'
+abs_path = os.path.abspath(simp_path)
 
 
 
@@ -48,21 +52,18 @@ def gyeonggi_get():
     all_gyeonggi = list(db.gyeonggi.find({},{'_id':False}))
     return jsonify({'result': all_gyeonggi})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#검색기능
+@app.route('/gyeonggi', methods=["POST"])
+def search_get():
+    search_receive = request.form['title_give']
+    print('###')
+    print("검색", search_receive)
+    print('###')
+    search_list = list(db.gyeonggi.find({'$or': [{'title': {'$regex': search_receive}},]},{'_id': False}))
+    print('###')
+    print("검색 결과", search_list)
+    print('###')
+    return jsonify({'searches': search_list})
 
 
 
