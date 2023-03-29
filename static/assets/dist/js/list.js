@@ -64,32 +64,19 @@ function save_bucket() {
     console.log(rows)
     $('#cards-box').empty()
     rows.forEach((a) => {
-      let name = a['name']
-      let trable_info = a['trable_info']
-      let star = a['star']
-      let img = a['img']
       let title = a['title']
+      let desc_split = a['desc_split']
+      let image = a['image']
       let temp = a['title']
-      let star_repeat = '⭐'.repeat(star)
 
-      temp_html = `<div class="col">
-                                    <div class="card shadow-sm">
-                                        <img src="${img}">
-                                        <div class="card-body">
-                                        <p class="card-text">${title}</p>
-                                        <p>${trable_info}</p>
-                                        <p>${name}</p>
-                                        <p>${star_repeat}</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                              <button class="btn btn-sm btn-outline-secondary" onclick="list_detail('${temp}')">View</button>
-                                           
-                                            </div>
-                                           
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>`
+      let temp_html = `<div class="card" style="width: 18rem;">
+                          <img src="${image}" class="card-img-top" alt="${title}">
+                          <div class="card-body">
+                            <h5 class="card-title">${title}</h5>
+                            <p class="card-text">${desc_split}</p>
+                            <a href="list_detail/${temp}" class="btn btn-primary">상세보기</a>
+                          </div>
+                        </div>`
       $('#cards-box').append(temp_html)
     });
 

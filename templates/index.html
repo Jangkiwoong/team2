@@ -17,7 +17,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
   <style>
-
     .navbar {
       background-color: white !important;
       width: 100%;
@@ -72,14 +71,44 @@
       font-size: 2em;
       font-weight: bold;
       text-align: center;
-      
+
       margin: 35px 10px 0px 10px;
-      
+
     }
-    
   </style>
   <script>
+    $(document).ready(function () {
+      show_bucket();
+    });
 
+
+
+    function show_bucket() {
+      fetch('/test').then(res => res.json()).then(data => {    
+        let rows = data['result']
+
+        $('#choices-box').empty()
+        for (let i = 0; i < 4; i++) {
+          let title = rows[i]['title']
+          let desc_split = rows[i]['desc_split']
+          let image = rows[i]['image']
+          let temp = rows[i]['title']
+
+          let temp_html = `<div class="col">
+                              <div class="card" style="width: 18rem;">
+                                <img src="${image}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">${title}</h5>
+                                  <p class="card-text">${desc_split}</p>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                            </div>`
+          $('#choices-box').append(temp_html)
+
+        }
+      })
+    }
   </script>
 </head>
 
@@ -90,12 +119,12 @@
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="https://cdn-icons-png.flaticon.com/128/2462/2462634.png" alt=""
-          width="50" height="40" class="d-inline-block align-text-top"> 여기어때 </a>
-        </div>
-    
+        <img src="https://cdn-icons-png.flaticon.com/128/2462/2462634.png" alt="" width="50" height="40"
+          class="d-inline-block align-text-top"> 여기어때 </a>
+    </div>
+
   </nav>
-  
+
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -135,45 +164,24 @@
 
   <div class="mybtn">
     <button class="btn btn-link" type="button" class="btm_image" id="img_btn" onClick="location.href='/list'">
-      <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg " width="600" height="570"></button>
+      <img src="https://i.pinimg.com/originals/80/45/cc/8045cc795c899e0b41effeb51028320c.jpg" width="600"
+        height="570"></button>
   </div>
   <div class="mychoices">
     <div class="row row-cols-1 row-cols-md-3 g-4" id="choices-box">
       <div class="col">
-        <div class="card h-100">
-          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-            class="card-img-top">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="choice-place">강원도</h5>
-            <p class="choice-list">리스트가 들어갑니다</p>
-            <button type="button" class="btn btn-outline-dark" onClick="location.href='Gangwon_do.html'">추천받기</button>
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-            class="card-img-top">
-          <div class="card-body">
-            <h5 class="choice-place">경기도</h5>
-            <p class="choice-list">리스트가 들어갑니다</p>
-            <button type="button" class="btn btn-outline-dark" onClick="location.href='gyeonggi_do.html'">추천받기</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-            class="card-img-top">
-          <div class="card-body">
-            <h5 class="choice-place">충청도</h5>
-            <p class="choice-list">리스트가 들어갑니다</p>
-            <button type="button" class="btn btn-outline-dark"
-              onClick="location.href='Chungcheong_do.html'">추천받기</button>
-          </div>
-        </div>
-      </div>
-      
+
+
 
     </div>
   </div>

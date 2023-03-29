@@ -172,11 +172,12 @@ def travelComment_get():
 
 #덕인
 #기영
-
-
-
-
-
+@app.route('/test', methods=['GET'])
+def test_get():
+   
+    all_users = list(db.details.find({},{'_id':False}))
+    print(all_users)
+    return jsonify({'result':all_users})
 
 
 
