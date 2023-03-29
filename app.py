@@ -1,9 +1,20 @@
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 app = Flask(__name__)
 
+# from pymongo import MongoClient
+# client = MongoClient('mongodb+srv://sparta:1234@cluster0.zvpdvge.mongodb.net/?retryWrites=true&w=majority')
+# db = client.toy_project
+
+
+
+
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://sparta:1234@cluster0.zvpdvge.mongodb.net/?retryWrites=true&w=majority')
-db = client.toy_project
+import certifi
+
+ca = certifi.where()
+
+client = MongoClient('mongodb+srv://test:sparta@cluster0.40aduh7.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
+db = client.dbsparta
 
 
 
@@ -133,11 +144,12 @@ def test_post(temp):
 
 #덕인
 #기영
-
-
-
-
-
+@app.route('/test', methods=['GET'])
+def test_get():
+   
+    all_users = list(db.details.find({},{'_id':False}))
+    print(all_users)
+    return jsonify({'result':all_users})
 
 
 

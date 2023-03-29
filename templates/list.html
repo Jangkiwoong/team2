@@ -27,21 +27,23 @@
 
 <body>
 
-  <!-- 상단 정보 창 -->
+
   <header data-bs-theme="dark">
     <div class="collapse text-bg-dark" id="navbarHeader">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-4">
             <h4>About</h4>
-            <p class="text-body-secondary">거긴 어때는 국내의 여행지에 대한 간단한 정보와 방문객들의 코멘트와 별점을 바탕으로 현재 가장 핫한 여행지를 추천해드립니다.</p>
+            <p class="text-body-secondary">Add some information about the album below, the author, or any other
+              background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link
+              them off to some social networking sites or contact information.</p>
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
             <h4>Contact</h4>
             <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Git hub</a></li>
-              <li><a href="#" class="text-white">Notion</a></li>
-              <li><a href="#" class="text-white">항해 99</a></li>
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
             </ul>
           </div>
         </div>
@@ -56,7 +58,7 @@
             <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
             <circle cx="12" cy="13" r="4" />
           </svg>
-          <strong>거긴어때?</strong>
+          <strong>Album</strong>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
           aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,60 +75,79 @@
           <div class="mybucket">
             <input id="title" class="form-control" type="text" placeholder="장소이름" />
             <button onclick="save_bucket()" class="btn btn-secondary my-2">검색</button>
-            <button class="btn btn-secondary my-2" onclick="open_box()">추가하기</button>
           </div>
-        </div>
-      </div>
-      <!-- url 입력 박스 -->
-      <div class="mypost" id="post-box">
-        <div class="form-floating mb-3">
-          <input id="url" type="email" class="form-control" placeholder="name@example.com">
-          <label>대한민국 구석구석 URL을 입력하세요</label>
-        </div>
-        <div class="mybtns">
-          <button onclick="posting()" type="button" class="btn btn-dark">저장하기</button>
-          <button onclick="close_box()" type="button" class="btn btn-outline-dark">닫기</button>
         </div>
       </div>
     </section>
 
     <div class="album py-5 bg-body-tertiary">
-      <div class="container" id="cards-box">
-
+      <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
           <div class="col">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                  dy=".3em">Thumbnail</text>
+              </svg>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-body-secondary">9 mins</small>
+                </div>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                  dy=".3em">Thumbnail</text>
+              </svg>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-body-secondary">9 mins</small>
+                </div>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                  dy=".3em">Thumbnail</text>
+              </svg>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-body-secondary">9 mins</small>
+                </div>
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>
