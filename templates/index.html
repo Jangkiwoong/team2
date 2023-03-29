@@ -2,88 +2,181 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
-    <title></title>
+  <title></title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
-    <style>
-        
-    </style>
-    <script>
-        
-    </script>
+  <style>
+
+    .navbar {
+      background-color: white !important;
+      width: 100%;
+      height: 70px;
+
+    }
+
+    .navbar-brand {
+      font-size: 30px;
+      margin: 0px 0px 0px 800px;
+      color: black !important;
+    }
+
+    .mychoices {
+      margin: 40px 0px 20px 40px;
+      width: 1100px;
+    }
+
+    .carousel slide {
+      height: 100%;
+      width: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    .carousel-inner>.carousel-item>img {
+      width: 640px;
+      height: 500px;
+      padding: 0;
+      border: none;
+      background: none;
+
+    }
+
+    .mybtn {
+      float: right;
+      margin: 35px 80px 0px 70px;
+
+
+    }
+
+    .mybtn:hover {
+      filter: brightness(50%);
+      transition: 1s;
+    }
+
+    .mybtn:hover:before {
+      /* content: "상세보기!"; */
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      
+      margin: 35px 10px 0px 10px;
+      
+    }
+    
+  </style>
+  <script>
+
+  </script>
 </head>
 
 <body>
-    <div>
-        <h1>오늘의 추천 여행지</h1>
-    </div>
-    <div class="..">
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="..">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>서울</h5>
-                        <button onclick = "location.href = '/seoul' ">버튼입니다</button> 
-                    </div>
-                </div>
-            </div>
+  <!-- <div class="mytitle">
+    <h1>지금 제일 핫한 여행지!</h1>
+  </div> -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn-icons-png.flaticon.com/128/2462/2462634.png" alt=""
+          width="50" height="40" class="d-inline-block align-text-top"> 여기어때 </a>
         </div>
+    
+  </nav>
+  
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
     </div>
-    <div class="..">
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="..">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>경기도</h5>
-                        <button onclick = "location.href = '/gyeonggi_do' ">버튼입니다</button> 
-                    </div>
-                </div>
-            </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+
+        <img
+          src="https://media.istockphoto.com/id/1402708189/ko/%EB%B2%A1%ED%84%B0/%EB%85%B8%EB%9E%80%EC%83%89-%EC%97%AC%ED%96%89-%EA%B0%80%EB%B0%A9%EC%9D%B4%EC%9E%88%EB%8A%94-%EC%97%AC%ED%96%89-%EB%B0%B0%EB%84%88.jpg?b=1&s=170667a&w=0&k=20&c=PYm9FZ2DLXJ1YHOHkkJ35ReFoqYgvBVi7jxy2gFEiHA="
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://velog.velcdn.com/images/kgy8987/post/7a94b00a-d955-4260-8fb5-8fb27b600978/image.png"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://velog.velcdn.com/images/kgy8987/post/468a4710-9e07-447e-b9bb-1bc4b4201000/image.jpg"
+          class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="mybtn">
+    <button class="btn btn-link" type="button" class="btm_image" id="img_btn" onClick="location.href='/list'">
+      <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg " width="600" height="570"></button>
+  </div>
+  <div class="mychoices">
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="choices-box">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+            class="card-img-top">
+          <div class="card-body">
+            <h5 class="choice-place">강원도</h5>
+            <p class="choice-list">리스트가 들어갑니다</p>
+            <button type="button" class="btn btn-outline-dark" onClick="location.href='Gangwon_do.html'">추천받기</button>
+          </div>
         </div>
-    </div>
-    <div class="..">
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="..">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>강원도</h5>
-                        <button onclick = "location.href = 'Gangwon_do' ">버튼입니다</button> 
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+            class="card-img-top">
+          <div class="card-body">
+            <h5 class="choice-place">경기도</h5>
+            <p class="choice-list">리스트가 들어갑니다</p>
+            <button type="button" class="btn btn-outline-dark" onClick="location.href='gyeonggi_do.html'">추천받기</button>
+          </div>
         </div>
-    </div>
-    <div class="..">
-        <div class="row row-cols-1 row-cols-md-4 g-4" id="..">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5>충청도</h5>
-                        <button onclick = "location.href = 'Chungcheong_do' ">버튼입니다</button> 
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
+            class="card-img-top">
+          <div class="card-body">
+            <h5 class="choice-place">충청도</h5>
+            <p class="choice-list">리스트가 들어갑니다</p>
+            <button type="button" class="btn btn-outline-dark"
+              onClick="location.href='Chungcheong_do.html'">추천받기</button>
+          </div>
         </div>
+      </div>
+      
+
     </div>
+  </div>
 </body>
 
 </html>
