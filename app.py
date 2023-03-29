@@ -87,10 +87,11 @@ def gyeonggi_get():
 @app.route('/gyeonggi', methods=["POST"])
 def search_get():
     search_receive = request.form['title_give']
-    
+   
     search_list = list(db.gyeonggi.find({'$or': [{'title': {'$regex': search_receive}},]},{'_id': False}))
-    
+   
     return jsonify({'searches': search_list})
+
 
 
 #상세페이지로 데이터 주기
