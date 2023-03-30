@@ -161,7 +161,6 @@ def travelComment_get():
 def test_get():
    
     all_users = list(db.details.find({},{'_id':False}))
-    print(all_users)
     return jsonify({'result':all_users})
 
 #기영
