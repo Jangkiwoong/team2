@@ -84,7 +84,7 @@ def list_search():
 # 데이터 내려오기
 @app.route("/gyeonggi", methods=["GET"])
 def gyeonggi_get():
-    all_gyeonggi = list(db.gyeonggi.find({},{'_id':False}))
+    all_gyeonggi = list(db.details.find({},{'_id':False}))
     return jsonify({'result': all_gyeonggi})
 
 #검색기능
@@ -92,7 +92,7 @@ def gyeonggi_get():
 def search_get():
     search_receive = request.form['title_give']
     
-    search_list = list(db.gyeonggi.find({'$or': [{'title': {'$regex': search_receive}},]},{'_id': False}))
+    search_list = list(db.details.find({'$or': [{'title': {'$regex': search_receive}},]},{'_id': False}))
     
     return jsonify({'searches': search_list})
 
@@ -303,4 +303,4 @@ def api_valid():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    app.run('0.0.0.0', port=5001, debug=True)
