@@ -208,7 +208,6 @@ def api_login():
     else:
         return jsonify({'result': 'fail', 'msg': '아이디/비밀번호가 일치하지 않습니다.'})
 
-
 #
 #유저 정보 확인 API - 로그인된 유저만 call 할 수 있는 API
 @app.route('/api/nick', methods=['GET'])
