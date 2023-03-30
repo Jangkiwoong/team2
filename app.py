@@ -61,13 +61,9 @@ def login():
 def register():
     return render_template('checkout.html')
 
-
-
 @app.route('/list')
 def gyeonggi_do():
     return render_template('list.html')
-
-
 
 @app.route('/list_detail')
 def Chungcheong_do():
@@ -76,8 +72,6 @@ def Chungcheong_do():
 @app.route('/main')
 def list_search():
     return render_template('index.html')
-
-
 
 
 #기웅
@@ -95,7 +89,6 @@ def search_get():
     search_list = list(db.details.find({'$or': [{'title': {'$regex': search_receive}},]},{'_id': False}))
     
     return jsonify({'searches': search_list})
-
 
 #기웅
 #덕인
@@ -171,32 +164,6 @@ def test_get():
     print(all_users)
     return jsonify({'result':all_users})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #기영
 #소연
 
@@ -260,47 +227,9 @@ def api_valid():
         return jsonify({'result': 'fail', 'msg': '로그인 시간이 만료되었습니다.'})
     except jwt.exceptions.DecodeError:
         return jsonify({'result': 'fail', 'msg': '로그인 정보가 존재하지 않습니다.'})
-
 #소연
-#윤기
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#윤기
-
-
+# 윤기
+# 윤기
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5001, debug=True)
