@@ -155,7 +155,7 @@
             let temp_html = `<div class="pb-3 mb-0 small lh-sm border-bottom w-100">
                                 <div class="d-flex justify-content-between">
                                   <strong class="text-gray-dark">${name}</strong>
-                                  <span class="d-block">${comment}</span>
+                                  <h5>${comment}</h5>
                                 </div>
                                 <span class="d-block">${star_repeat}</span>
                               </div>`
@@ -177,12 +177,13 @@
   <header data-bs-theme="dark">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-          <lord-icon src="https://cdn.lordicon.com/fihkmkwt.json" trigger="loop"
-            colors="primary:#121331,secondary:#4bb3fd" scale="60" state="hover-jump-spin"
-            style="width:30px; height:35px; position: relative;">
-          </lord-icon>
+        <lord-icon src="https://cdn.lordicon.com/fihkmkwt.json" trigger="loop"
+          colors="primary:#121331,secondary:#4bb3fd" scale="60" state="hover-jump-spin"
+          style="width:30px; height:35px; position: relative;">
+        </lord-icon>
         <a class="navbar-brand p-1" href="#">여긴어때</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -224,25 +225,25 @@
           <p class="lead">{{desc}}</p>
         </div>
         <div class="col-md-5 order-md-1">
-          <img src="{{image}}" alt="{{title}}" width="400">
+          <img src="{{image}}" alt="{{title}}" width="500">
           <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
             height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
             preserveAspectRatio="xMidYMid slice" focusable="false"> -->
           <title>Placeholder</title>
           <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
-            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+            fill="var(--bs-secondary-color)" dy=".3em"></text>
           </svg>
         </div>
       </div>
       <!-- 코맨트, 별점 입력 -->
       <div class="mypost">
         <div class="form-floating">
-          <textarea class="form-control" placeholder="Leave a comment here" id="name" style="height: 50px"></textarea>
+          <textarea class="form-control" placeholder="Leave a comment here" id="name" style="height: 30px"></textarea>
           <label for="floatingTextarea2">닉네임</label>
         </div>
         <div class="form-floating">
           <textarea class="form-control" placeholder="Leave a comment here" id="comment"
-            style="height: 50px"></textarea>
+            style="height: 30px"></textarea>
           <label for="floatingTextarea2">코멘트를 작성해주세요</label>
         </div>
         <div class="input-star">
@@ -274,8 +275,8 @@
           <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
             <div class="d-flex justify-content-between">
               <strong class="text-gray-dark">홍길동</strong>
-              <span class="d-block">미리 좀 얘기하자면 유쾌하시고, 이분께서 맡아주셔서 다행인 여행이었다.</span>
             </div>
+            <p>미리 좀 얘기하자면 유쾌하시고, 이분께서 맡아주셔서 다행인 여행이었다.</p>
             <span class="d-block">⭐️⭐️⭐️⭐️</span>
           </div>
         </div>
@@ -290,8 +291,8 @@
           <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
             <div class="d-flex justify-content-between">
               <strong class="text-gray-dark">Full Name</strong>
-              <span class="d-block">미리 좀 얘기하자면 유쾌하시고, 이분께서 맡아주셔서 다행인 여행이었다.</span>
             </div>
+            <p>미리 좀 얘기하자면 유쾌하시고, 이분께서 맡아주셔서 다행인 여행이었다.</p>
             <span class="d-block">⭐️⭐️⭐️⭐️</span>
           </div>
         </div>
@@ -306,8 +307,8 @@
           <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
             <div class="d-flex justify-content-between">
               <strong class="text-gray-dark">Full Name</strong>
-              <span class="d-block">미리 좀 얘기하자면 유쾌하시고, 이분께서 맡아주셔서 다행인 여행이었다.</span>
             </div>
+            <p>미리 좀 얘기하자면 유쾌하시고, 이분께서 맡아주셔서 다행인 여행이었다.</p>
             <span class="d-block">⭐️⭐️⭐️⭐️</span>
           </div>
         </div>

@@ -61,13 +61,9 @@ def login():
 def register():
     return render_template('checkout.html')
 
-
-
 @app.route('/list')
 def gyeonggi_do():
     return render_template('list.html')
-
-
 
 @app.route('/list_detail')
 def Chungcheong_do():
@@ -78,13 +74,11 @@ def list_search():
     return render_template('index.html')
 
 
-
-
 #기웅
 # 데이터 내려오기
 @app.route("/gyeonggi", methods=["GET"])
 def gyeonggi_get():
-    all_gyeonggi = list(db.gyeonggi.find({},{'_id':False}))
+    all_gyeonggi = list(db.details.find({},{'_id':False}))
     return jsonify({'result': all_gyeonggi})
 
 #검색기능
@@ -92,10 +86,9 @@ def gyeonggi_get():
 def search_get():
     search_receive = request.form['title_give']
     
-    search_list = list(db.gyeonggi.find({'$or': [{'title': {'$regex': search_receive}},]},{'_id': False}))
+    search_list = list(db.details.find({'$or': [{'title': {'$regex': search_receive}},]},{'_id': False}))
     
     return jsonify({'searches': search_list})
-
 
 #기웅
 #덕인
@@ -171,32 +164,6 @@ def test_get():
     print(all_users)
     return jsonify({'result':all_users})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #기영
 #소연
 
@@ -241,7 +208,6 @@ def api_login():
     else:
         return jsonify({'result': 'fail', 'msg': '아이디/비밀번호가 일치하지 않습니다.'})
 
-
 #
 #유저 정보 확인 API - 로그인된 유저만 call 할 수 있는 API
 @app.route('/api/nick', methods=['GET'])
@@ -260,47 +226,9 @@ def api_valid():
         return jsonify({'result': 'fail', 'msg': '로그인 시간이 만료되었습니다.'})
     except jwt.exceptions.DecodeError:
         return jsonify({'result': 'fail', 'msg': '로그인 정보가 존재하지 않습니다.'})
-
 #소연
-#윤기
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#윤기
-
-
+# 윤기
+# 윤기
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    app.run('0.0.0.0', port=5001, debug=True)
