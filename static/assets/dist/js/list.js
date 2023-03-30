@@ -13,14 +13,15 @@ function listing() {
       let image = a['image']
       let temp = a['title']
 
-      let temp_html = `<div class="card" style="width: 18rem;">
+      let temp_html = `<div class="col">
+      <div class="card shadow-sm">
                           <img src="${image}" class="card-img-top" alt="${title}">
                           <div class="card-body">
                             <h5 class="card-title">${title}</h5>
                             <p class="card-text">${desc_split}</p>
                             <a href="list_detail/${temp}" class="btn btn-primary">상세보기</a>
                           </div>
-                        </div>`
+                        </div></div>`
       $('#cards-box').append(temp_html)
     })
   })
@@ -69,14 +70,15 @@ function save_bucket() {
       let image = a['image']
       let temp = a['title']
 
-      let temp_html = `<div class="card" style="width: 18rem;">
-                          <img src="${image}" class="card-img-top" alt="${title}">
-                          <div class="card-body">
-                            <h5 class="card-title">${title}</h5>
-                            <p class="card-text">${desc_split}</p>
-                            <a href="list_detail/${temp}" class="btn btn-primary">상세보기</a>
+      let temp_html = `<div class="col">
+                            <div class="card shadow-sm">
+                            <img src="${image}" class="card-img-top" alt="${title}">
+                            <div class="card-body">
+                              <h5 class="card-title">${title}</h5>
+                              <p class="card-text">${desc_split}</p>
+                              <a href="list_detail/${temp}" class="btn btn-primary">상세보기</a>
                           </div>
-                        </div>`
+                        </div></div>`
       $('#cards-box').append(temp_html)
     });
 

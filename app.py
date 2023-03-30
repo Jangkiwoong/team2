@@ -2,7 +2,10 @@ from flask import Flask, render_template, jsonify, request, session, redirect, u
 app = Flask(__name__)
 
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://sparta:1234@cluster0.zvpdvge.mongodb.net/?retryWrites=true&w=majority')
+import certifi
+ca = certifi.where()
+
+client = MongoClient('mongodb+srv://sparta:1234@cluster0.zvpdvge.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
 db = client.toy_project
 
 
@@ -228,7 +231,7 @@ def api_login():
         # JWT - payload와 시크릿키 필요.
         payload = {
             'id': id_receive,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=100)
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1)
         }
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
