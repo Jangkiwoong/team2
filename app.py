@@ -94,42 +94,70 @@ def search_get():
     return jsonify({'searches': search_list})
 
 
-#상세페이지로 데이터 주기
-@app.route('/list_det/<temp>')
-def test_post(temp):
-   print('###')
-   print(temp)
-   print('###')
-   asd = db.gyeonggi.find_one({'title':temp},{'_id': False})
-   return render_template('list_detail.html',result = asd)
-
-
 #기웅
 #덕인
+@app.route("/travelDetail", methods=["POST"])
+def travelDetail_post():
+    url_receive = request.form['url_give']
 
+    headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+    data = requests.get(url_receive,headers=headers)
 
+    soup = BeautifulSoup(data.text, 'html.parser')
+    
+    title_split = soup.select_one('head > title').text 
+    title = title_split.split('>')[0]  #'>'를 기준으로 문자열을 분리하고 첫 번째 부분을 선택
 
+    image = soup.select_one('meta[property="og:image"]')['content']
 
+    desc = soup.select_one('meta[name="description"]')['content']
+    desc_split = desc.split('.')[0] + '.' #'.'를 기준으로 문자열을 분리하고 첫 번째 부분을 선택 
 
+    doc = {
+        'title':title,
+        'desc':desc,
+        'desc_split':desc_split,
+        'image':image
+    }
+    db.details.insert_one(doc)
+    return jsonify({'msg':'저장 완료!'})
 
+#상세 페이지에 데이터 보내주기
+@app.route('/list_detail/<temp>')
+def detail_post(temp):
+   detailTravel = db.details.find_one({'title':temp},{'_id': False})
+   return render_template('list_detail.html', result = detailTravel,
+                                        title = detailTravel['title'],
+                                        desc = detailTravel['desc'],
+                                        desc_split = detailTravel['desc_split'],
+                                        image = detailTravel['image'])
 
+@app.route("/travelDetail", methods=["GET"])
+def travelDetail_get():
+     all_details = list(db.details.find({},{'_id':False}))
+     return jsonify({'result':all_details})
 
+# 여행 상세 페이지 > 코멘트 DB 저장
+@app.route("/detail/travelComment", methods=["POST"])
+def travelComment_post():
+    name_receive = request.form['name_give']
+    title_receive = request.form['title_give']
+    comment_receive = request.form['comment_give']
+    star_receive = request.form['star_give']
+    doc = {
+        'name':name_receive,
+        'title':title_receive,
+        'comment':comment_receive,
+        'star':star_receive
+    }
+    db.comments.insert_one(doc)
+    return jsonify({'msg': '저장 완료!'})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 코멘트 불러오기
+@app.route("/detail/travelComment", methods=["GET"])
+def travelComment_get():
+    all_comments = list(db.comments.find({},{'_id':False}))
+    return jsonify({'result': all_comments})
 
 #덕인
 #기영
